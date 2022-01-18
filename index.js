@@ -3,6 +3,7 @@ var bodyParser = require("body-parser");
 var request = require("request");
 var axios = require("axios");
 var app = express();
+var cors = require("cors");
 
 var mqtt = require("mqtt");
 
@@ -14,6 +15,8 @@ app.set("port", process.env.PORT || 3000);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.use(cors());
 
 app.post("/sendtoline", async (req, res) => {
   console.log(req.body);
