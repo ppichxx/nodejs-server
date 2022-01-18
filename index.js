@@ -25,11 +25,7 @@ app.post("/sendtoline", async (req, res) => {
     messages: [
       {
         type: "text",
-        text: "Hello, world1",
-      },
-      {
-        type: "text",
-        text: "Hello, world2",
+        text: req.body.message,
       },
     ],
   };
