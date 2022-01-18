@@ -43,8 +43,8 @@ app.post("/sendtoline", async (req, res) => {
       json: true,
     },
     function (err, res, body) {
-      if (err) console.log(err);
-      if (res) console.log("success");
+      if (err) res.end(err);
+      if (res) res.end("success");
       // if (body) console.log(body);
     }
   );
